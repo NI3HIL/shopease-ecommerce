@@ -1,5 +1,8 @@
 # ShopEase - Full-Stack MERN E-Commerce Platform
 
+## 🔗 Live Demo
+Access the live application here: **[https://shopease-ecommerce-frontend.vercel.app](https://shopease-ecommerce-frontend.vercel.app)**
+
 ShopEase is a modern, responsive full-stack e-commerce application built using the MERN stack (MongoDB, Express.js, React, Node.js). It features a complete shopping flow, user authentication, profile settings, and an administrative panel for catalog and order management.
 
 ## 🚀 Key Features
