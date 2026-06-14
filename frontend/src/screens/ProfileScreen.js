@@ -35,7 +35,12 @@ export default function ProfileScreen() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error('Passwords do not match');
+      return;
+    }
     try {
+      dispatch({ type: 'UPDATE_REQUEST' });
       const { data } = await axios.put(
         '/api/users/profile',
         {
@@ -55,7 +60,7 @@ export default function ProfileScreen() {
       toast.success('User updated successfully');
     } catch (err) {
       dispatch({
-        type: 'FETCH_FAIL',
+        type: 'UPDATE_FAIL',
       });
       toast.error(getError(err));
     }
@@ -100,7 +105,9 @@ export default function ProfileScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Update</Button>
+          <Button type="submit" disabled={loadingUpdate}>
+            {loadingUpdate ? 'Updating...' : 'Update'}
+          </Button>
         </div>
       </form>
     </div>

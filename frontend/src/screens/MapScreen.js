@@ -55,6 +55,7 @@ export default function MapScreen() {
     ctxDispatch({
       type: 'SET_FULLBOX_ON',
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ctxDispatch]);
 
   const onLoad = (map) => {
