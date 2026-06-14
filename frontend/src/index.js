@@ -7,6 +7,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Store';
+import axios from 'axios';
+
+axios.defaults.baseURL =
+  window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? ''
+    : 'https://shopease-backend-v40t.onrender.com';
 
 const root = createRoot(document.getElementById('root'));
 
